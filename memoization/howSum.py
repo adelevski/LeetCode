@@ -20,7 +20,19 @@ def howSum(targetSum, numbers, memo={}):
 
 
 # print(howSum(7, [2, 3]))
-# print(howSum(7, [5, 3, 4, 7]))
-print(howSum(7, [2, 4]))
+targetSum = 0
+numbers = []
+memo = {}
+print(howSum(7, [5, 3, 4, 7]))
+targetSum = 0
+numbers = []
+memo = {}
+# print(howSum(7, [2, 4]))
+targetSum = 0
+numbers = []
+memo = {}
 print(howSum(8, [2, 3, 5]))
+targetSum = 0
+numbers = []
+memo = {}
 print(howSum(300, [7, 14]))
