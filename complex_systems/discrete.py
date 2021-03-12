@@ -1,30 +1,28 @@
 from pylab import *
 
-a = 1.1
-b = 1
 
-def initialize():
-    global x, result, t, timesteps
-    x = 1
-    result = [x]
-    t = 0
-    timesteps = [t]
+x0 = 0
+x1 = 1
+xresult = [x]
+yresult = [y]
 
-def observe():
-    global x, result, t, timesteps
-    result.append(x)
-    timesteps.append(t)
+def observe(x, y):
+    xresult.append(x)
+    yresult.append(y)
 
-def update():
-    global x, result, t, timtesteps
-    x = a * x + b
-    t = t + 0.1
+def update(x, y):
+    newX = x + y
+    newY = b * x + y
+    x, y = newX, newY
+    return x, y
 
+for t in range(30):
+    x, y = update(x, y)
+    observe(x, y)
 
-initialize()
-while t < 10.:
-    update()
-    observe()
+fig1 = plot(xresult, 'b-')
+fig1 = plot(yresult, 'g--')
+show()
 
-plot(timesteps, result)
+fig2 = plot(xresult, yresult)
 show()
