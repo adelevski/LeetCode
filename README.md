@@ -1,2 +1,4 @@
-# dynamic_programming
- freecodecamp 5h course on DP
+# Programming Practice
+
+I will use this repo for random programming practice
+
