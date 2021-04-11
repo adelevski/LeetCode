@@ -1,8 +1,8 @@
 
 
+# 387. First Unique Character in a String
 
-
-def findFirstNonRepeartingCharacter(string):
+def firstUniqChar(string):
     hashmap = {}
     for key in string:
         if key not in hashmap:
@@ -15,4 +15,4 @@ def findFirstNonRepeartingCharacter(string):
             return
     print("No non-repeating characters")
 
-findFirstNonRepeartingCharacter('abcabcabcfggggg')
+firstUniqChar('abcabcabcfggggg')
