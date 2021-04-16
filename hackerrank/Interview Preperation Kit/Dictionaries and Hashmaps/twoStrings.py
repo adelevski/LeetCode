@@ -12,7 +12,7 @@ def twoStrings(s1, s2):
         if char not in first:
             first[char] = 1
     for char in s2:
-        if char not in second:
+        if char not in second:  
             second[char] = 1
     for char in first:
         if char in second:
