@@ -1,21 +1,16 @@
 from functools import lru_cache
-
-
 d = 30
 f = 30
 target = 500
 # Output: 222616187
 
 def numRollsToTarget(d, f, target):
-    mod = 10 ** 9 + 7
-    @lru_cache(maxsize=None)
-    def dp(i, t):
-        if i==0: return 1 if t == 0 else 0
-        if t>f*i or t<i: return 0
-        ans = 0
-        for k in range(1, min(f, t) + 1):
-            ans = (ans + dp(i-1, t-k)) % mod
-        return ans
-    return dp(d, target)
+    @lru_cache(None)
+    def dfs(t, d):
+        if t == 0 and d == 0: return 1
+        if d <= 0 or t <= 0: return 0
+        return sum(dfs(t-i, d-1) for i in range(1, f+1))
+        
+    return dfs(target, d) % int(1e9 + 7)
 
 print(numRollsToTarget(d, f, target))
