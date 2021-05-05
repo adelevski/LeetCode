@@ -82,7 +82,7 @@ nums = [1, 0, 1, 0]
 
 #     return dp[N-1]
 
-# Greedy aproach, super fast and no extra space
+# Greedy approach, super fast and no extra space
 def canJump(nums):
     maxJump,N,i = 0,len(nums)-1,0
     while i <= maxJump and i < N:
