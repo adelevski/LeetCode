@@ -16,29 +16,23 @@ c = [1, 2, 3]
 # c = [7, 9, 11, 13]
 # # Output = 12
 
-# Naive approach
+# Brilliat approach where you have a couple nested loops, 
+# where you iterate over valid ints in a and c for each b, 
+# then multiply the number of iterations and add to total
 def triplets(a, b, c):
-    A, B, C = len(a), len(b), len(c)
-    print(f"Lens = {A}, {B}, {C}")
-    aMin, bMin, cMin = min(a), min(b), min(c)
-    print(f"Mins = {aMin}, {bMin}, {cMin}")
-    aMax, bMax, cMax = max(a), max(b), max(c)
-    print(f"Maxs = {aMax}, {bMax}, {cMax}")
-    answer = 0
-    d = {}
-    newA = [a[val] for val in range(A) if a[val] <= bMax]
-    newB = [b[val] for val in range(B) if b[val] >= aMin or b[val] >= cMin]
-    newC = [c[val] for val in range(C) if c[val] <= bMax]
-    print(f"new lists = {newA}, {newB}, {newC}")
-    Anew, Bnew, Cnew = len(newA), len(newB), len(newC)
-    print(f"new lens = {Anew}, {Bnew}, {Cnew}")
-    for i in range(Anew):
-        for j in range(Bnew):
-            for k in range(Cnew):
-                if newA[i] <= newB[j] and newB[j] >= newC[k] and (newA[i], newB[j], newC[k]) not in d:
-                    answer += 1
-                    d.setdefault((newA[i], newB[j], newC[k]), False)
-                    d[(newA[i], newB[j], newC[k])] = True
-    return answer
+    a = list(sorted(set(a)))
+    b = list(sorted(set(b)))
+    c = list(sorted(set(c)))
+
+    a1, b1, c1, ans = 0, 0, 0, 0
+
+    while b1 < len(b):
+        while a1 < len(a) and a[a1] <= b[b1]:
+            a1 += 1
+        while c1 < len(c) and c[c1] <= b[b1]:
+            c1 += 1
+        ans += a1 * c1
+        b1 += 1
+    return ans
 
 print(triplets(a, b, c))
