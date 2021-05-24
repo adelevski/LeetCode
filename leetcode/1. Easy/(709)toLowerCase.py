@@ -1,7 +1,7 @@
 
 
 s = "LOVELY"
-
+# Output: "lovely"
 
 def toLowerCase(s):
     return s.lower()
