@@ -1,10 +1,16 @@
 
 
+
+
 n = 4
-# Output: [[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
+# Output: 2
 
 
-def solveNQueens(n):
+
+
+
+
+def totalQueens(n):
     output = []
     def dfs(l,excluded): #{(1,2),(2,3)}
         r = len(l)
@@ -30,10 +36,10 @@ def solveNQueens(n):
         else:
             output.append(l)
     dfs([],set())
-    return output
+    return len(output)
 
-print(solveNQueens(n))
 
+print(totalQueens(n))
 
 
 
