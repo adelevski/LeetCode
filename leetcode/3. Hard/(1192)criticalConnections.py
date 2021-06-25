@@ -32,4 +32,4 @@ def criticalConnections(n, connections):
     dfs(0, -1)
     return output
 
-criticalConnections(n, connections)
+print(criticalConnections(n, connections))
