@@ -1,8 +1,8 @@
 
-
+from heapq import heappush, heappop
 from sortedcontainers import SortedList
 
-
+# Using SortedList
 class MedianFinder:
 
     def __init__(self):
@@ -15,20 +15,26 @@ class MedianFinder:
         N = len(self.lst)
         if N % 2 == 0:
             return (self.lst[N//2] + self.lst[(N//2)-1]) / 2
-        else:
-            return self.lst[N//2]
+        return self.lst[N//2]
 
 
 
+# Using min and max heap
+class MedianFinder:
+    def __init__(self):
+        self.minHeap = []
+        self.maxHeap = []
 
-obj = MedianFinder()
-obj.addNum(1)
-obj.addNum(2)
-obj.addNum(3)
-obj.addNum(4)
-param_2 = obj.findMedian()
+    def addNum(self, num: int) -> None:
+        heappush(self.maxHeap, -num)
+        heappush(self.minHeap, -heappop(self.maxHeap))
+        if len(self.minHeap) > len(self.maxHeap):
+            heappush(self.maxHeap, -heappop(self.minHeap))
 
-print(param_2)
+    def findMedian(self) -> float:
+        if len(self.maxHeap) > len(self.minHeap):
+            return -self.maxHeap[0]
+        return (-self.maxHeap[0] + self.minHeap[0]) / 2
 
 
 
