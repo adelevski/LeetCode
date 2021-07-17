@@ -3,8 +3,6 @@ arr = [1,0,1,0,1]
 # Output: [0,3]
 
 
-
-
 def threeEqualParts(arr):
     n = len(arr)
     idxs = [i for i in range(n) if arr[i] == 1]
