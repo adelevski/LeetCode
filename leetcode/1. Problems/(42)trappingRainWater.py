@@ -1,8 +1,10 @@
+from itertools import accumulate
+
 
 height = [0,1,0,2,1,0,1,3,2,1,2,1]
 # Output: 6
 
-
+# naive method with loops
 def trap(height):
     if len(height) < 3:
         return 0
@@ -32,8 +34,12 @@ def trap(height):
     return output
 
 
+# More pythonic way of doing it, using itertools' accumulate function
+def trap2(H):
+    left = list(accumulate(H, max))
+    right = list(accumulate(H[::-1], max))[::-1]
+    return sum(min(i, j) - k for i, j, k in zip(left, right, H))
 
 
 
-
-print(trap(height))
+print(trap2(height))
