@@ -1,13 +1,13 @@
 from itertools import combinations
 
 
-nums = [1,2,2]
+# nums = [1,2,2]
 # Output: [[],[1],[1,2],[1,2,2],[2],[2,2]]
 
 # nums = [0]
 # Output: [[],[0]]
 
-# nums = [4,4,4,1,4]
+nums = [4,4,4,1,4]
 # Output: [[],[1],[1,4],[1,4,4],[1,4,4,4],[1,4,4,4,4],[4],[4,4],[4,4,4],[4,4,4,4]]
 
 # My version
@@ -27,4 +27,11 @@ def subsetsWithDup(nums):
     return output
 
 
+# Crazy one liner version of my method
+def subset2(nums):
+    return [list(k) for i in range(len(nums)+1) for k in set([tuple(sorted(list(j))) for j in set(combinations(nums, i))])]
+
+
+
 print(subsetsWithDup(nums))
+print(subset2(nums))
