@@ -1,3 +1,3 @@
-# Programming Practice
+# Python practice
 
-Repo for programming practice including but not limited to leetcode and hackerrank problems, along with other CS practice
+Repo for leetcode, hackerrank, etc.. challange problems that I have completed
