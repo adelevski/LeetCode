@@ -1,4 +1,4 @@
-from collections import defaultdict
+# from collections import defaultdict
 
 class Node:
     def __init__(self, val=None, children=None):
@@ -7,10 +7,11 @@ class Node:
 
 
 def levelOrder(root):
-    d = defaultdict(list)
+    d = {}
         
     def dfs(node, level):
         if not node: return
+        d.setdefault(level, [])
         d[level].append(node.val)
         if node.children:
             for child in node.children:
