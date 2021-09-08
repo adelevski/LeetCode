@@ -8,9 +8,6 @@ shifts = [1,2,3]
 # Output: "gfd"
 
 
-
-
-
 def shiftingLetters(s, shifts):
     n = len(s)
     for i in range(n-2, -1, -1):
