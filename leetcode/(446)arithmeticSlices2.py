@@ -8,6 +8,7 @@ def numOfSlices(nums):
     total = 0
     n = len(nums)
     dp = [Counter() for item in nums]
+    print(dp)
     for i in range(n):
         for j in range(i):
             diff = nums[i] - nums[j]
