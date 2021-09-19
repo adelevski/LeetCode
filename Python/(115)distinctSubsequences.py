@@ -8,7 +8,7 @@ t = "bag"
 
 
 def numDistinct(s, t):
-    
+    #@lru_cache(None) # To speed things up
     def dp(i,j):
         if i == -1: return j == -1
         if j == -1: return j == -1
