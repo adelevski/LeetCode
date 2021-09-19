@@ -1,3 +1,3 @@
-# Python practice
+# LeetCode
 
-Repo for leetcode, hackerrank, etc.. challange problems that I have completed
+Repo for leetcode challange problems that I have completed
