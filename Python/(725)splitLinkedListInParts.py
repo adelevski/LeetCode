@@ -12,7 +12,7 @@ k = 5
 
 
 def splitListToparts(head, k):
-    cur = root
+    cur = head
     N = 0
     while cur:
         cur = cur.next
@@ -20,7 +20,7 @@ def splitListToparts(head, k):
     d, r = divmod(N, k)
 
     ans = []
-    cur = root
+    cur = head
     for i in range(k):
         head = cur
         for j in range(d + (i < r) - 1):
