@@ -1,6 +1,24 @@
-# VS code
-.vscode
-
 # Python 
 venv
 
+# Visual Studio and Visual Studio Code temporary files
+*.suo
+*.user
+*.sln.docstates
+*.sln.ide/
+*.swp
+*.obj
+*.log
+*.cache
+*.vscode/
+
+# Build directories
+Debug/
+Release/
+build/
+dist/
+
+# Artifacts
+*.exe
+*.ilk
+*.pdb
